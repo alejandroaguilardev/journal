@@ -43,6 +43,7 @@ export const LoginPage = () => {
 	return (
 		<AuthLayout title="Login">
 			<form
+			aria-label='submit-form'
 				onSubmit={onSubmit}
 				className="animate__animated animate__fadeIn animate_faster"
 			>
@@ -68,6 +69,9 @@ export const LoginPage = () => {
 							type="password"
 							placeholder="Contraseña"
 							fullWidth
+							inputProps={{
+								'data-testid': 'password'
+							}}
 						/>
 					</Grid>
 
@@ -98,6 +102,7 @@ export const LoginPage = () => {
 								fullWidth
 								onClick={onGoogleSignIn}
 								disabled={isAuthenticating}
+								aria-label='google-btn'
 							>
 								<Google />
 								<Typography sx={{ ml: 1 }}>Google</Typography>
